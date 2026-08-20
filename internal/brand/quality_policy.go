@@ -109,9 +109,3 @@ func ValidateAppeal(appeal Appeal, inspection Inspection, now time.Time) error {
 	}
 	return nil
 }
-
-func supplierLotSnapshot(lot IngredientLot) IngredientLot {
-	clone := lot
-	clone.CertificateID = ""
-	return clone
-}
