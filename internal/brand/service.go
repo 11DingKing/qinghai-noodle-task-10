@@ -48,6 +48,8 @@ func (s *Service) CheckChiliOil(_ context.Context, batch ChiliOilBatch, chili, o
 }
 
 func (s *Service) CheckSupplierCertificate(_ context.Context, lot IngredientLot, certificate SupplierCertificate) error {
+	lot = supplierLotSnapshot(lot)
+
 	return ValidateSupplierCertificate(lot, certificate, s.now())
 }
 
